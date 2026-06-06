@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Natureaalay | Traditional Naturopathy | Nagpur</title>
+  <meta name="description" content="Traditional naturopathy centre in Nagpur for ladies and children. 30+ years of healing. Natural weight loss, PCOD, hair, skin and hormonal care. No medicines, no side effects.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* === TOKENS === */
+    :root {
+      --g-deep:    oklch(30% 0.085 145);
+      --g-forest:  oklch(40% 0.115 145);
+      --g-mid:     oklch(52% 0.13  145);
+      --g-light:   oklch(74% 0.10  145);
+      --g-pale:    oklch(94% 0.038 145);
+      --g-ghost:   oklch(97% 0.018 145);
+
+      --e-brown:   oklch(36% 0.065 50);
+      --e-gold:    oklch(80% 0.115 82);
+
+      --cream:     oklch(97% 0.014 80);
+      --cream-2:   oklch(93% 0.020 78);
+
+      --t-primary: oklch(20% 0.020 52);
+      --t-body:    oklch(38% 0.022 52);
+      --t-muted:   oklch(56% 0.018 52);
+      --t-on-dark: oklch(96% 0.010 80);
+
+      --f-display: 'Yeseva One', Georgia, serif;
+      --f-body:    'Nunito', system-ui, sans-serif;
+
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+      --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* === RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-optical-sizing: auto; }
+    body {
+      font-family: var(--f-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--t-primary);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-family: var(--f-body);
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background 150ms, border-color 150ms,
+                  transform 150ms var(--ease-out-quart),
+                  box-shadow 150ms;
+      white-space: nowrap;
+    }
+    .btn:focus-visible { outline: 2px solid var(--g-mid); outline-offset: 3px; }
+    .btn:active { transform: translateY(0) !important; }
+
+    .btn-primary {
+      background: var(--g-forest);
+      color: var(--t-on-dark);
+      border-color: var(--g-forest);
+    }
+    .btn-primary:hover {
+      background: var(--g-deep);
+      border-color: var(--g-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px oklch(30% 0.085 145 / 0.32);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--g-forest);
+      border-color: var(--g-forest);
+    }
+    .btn-outline:hover { background: var(--g-pale); transform: translateY(-2px); }
+
+    .btn-whatsapp {
+      background: oklch(55% 0.195 145);
+      color: #fff;
+      border-color: oklch(55% 0.195 145);
+    }
+    .btn-whatsapp:hover {
+      background: oklch(48% 0.195 145);
+      border-color: oklch(48% 0.195 145);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px oklch(48% 0.195 145 / 0.38);
+    }
+
+    .btn-ghost-dark {
+      background: transparent;
+      color: oklch(88% 0.04 145);
+      border-color: oklch(55% 0.09 145);
+    }
+    .btn-ghost-dark:hover { background: oklch(40% 0.115 145 / 0.3); transform: translateY(-2px); }
+
+    .btn-lg { padding: 16px 40px; font-size: 1rem; }
+
+    /* === NAVIGATION === */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: oklch(97% 0.014 80 / 0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid oklch(90% 0.022 145 / 0.5);
+      transition: box-shadow 300ms var(--ease-out-quart);
+    }
+    .nav.scrolled { box-shadow: 0 2px 28px oklch(30% 0.085 145 / 0.09); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo-mark {
+      width: 38px; height: 38px;
+      background: var(--g-forest);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .nav-logo-name {
+      font-family: var(--f-display);
+      font-size: 1.05rem;
+      color: var(--g-deep);
+      line-height: 1.15;
+    }
+    .nav-logo-sub {
+      display: block;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--t-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    @media (max-width: 900px) { .nav-links { display: none; } }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--t-body);
+      position: relative;
+      transition: color 150ms;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 100%;
+      height: 2px;
+      background: var(--g-mid);
+      transition: right 220ms var(--ease-out-quart);
+    }
+    .nav-links a:hover { color: var(--g-deep); }
+    .nav-links a:hover::after { right: 0; }
+    .nav-links a:focus-visible { outline: 2px solid var(--g-mid); outline-offset: 4px; border-radius: 2px; }
+
+    /* === HERO === */
+    .hero {
+      min-height: 100svh;
+      padding: calc(72px + 80px) 32px 80px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: calc(72px + 64px);
+        gap: 48px;
+        text-align: center;
+      }
+    }
+
+    /* Page ambient glow */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 72% 18%, oklch(74% 0.10 145 / 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 45% at  8% 78%, oklch(89% 0.038 72 / 0.42) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 14px 3px 6px;
+      background: var(--g-ghost);
+      border: 1px solid oklch(74% 0.10 145 / 0.45);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--g-forest);
+      margin-bottom: 24px;
+      animation: riseUp 0.6s var(--ease-out-expo) both;
+    }
+    .badge-pip {
+      width: 22px; height: 22px;
+      background: var(--g-forest);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      color: #fff;
+    }
+    @media (max-width: 1024px) { .hero-badge { margin-inline: auto; } }
+
+    .hero-h1 {
+      font-family: var(--f-display);
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      line-height: 1.1;
+      color: var(--t-primary);
+      text-wrap: pretty;
+      margin-bottom: 20px;
+      animation: riseUp 0.7s 0.08s var(--ease-out-expo) both;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--g-forest);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--t-body);
+      max-width: 50ch;
+      text-wrap: pretty;
+      margin-bottom: 32px;
+      animation: riseUp 0.7s 0.16s var(--ease-out-expo) both;
+    }
+    @media (max-width: 1024px) { .hero-sub { margin-inline: auto; } }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      animation: riseUp 0.7s 0.24s var(--ease-out-expo) both;
+    }
+    @media (max-width: 1024px) { .hero-ctas { justify-content: center; } }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: riseUp 0.7s 0.32s var(--ease-out-expo) both;
+    }
+    @media (max-width: 1024px) { .hero-trust { justify-content: center; } }
+    .trust-pip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--t-muted);
+    }
+    .trust-pip::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--g-light);
+      flex-shrink: 0;
+    }
+
+    /* === HERO VISUAL === */
+    .hero-visual {
+      position: relative;
+      animation: riseUp 0.85s 0.18s var(--ease-out-expo) both;
+    }
+    @media (max-width: 1024px) {
+      .hero-visual { order: -1; max-width: min(88vw, 620px); margin-inline: auto; }
+    }
+
+    /* Corner leaf decoration */
+    .hero-corner-leaf {
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      opacity: 0.12;
+      animation: leafSway 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* Main photo frame */
+    .hero-frame {
+      border-radius: 28px 28px 80px 28px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(155deg, var(--g-forest) 0%, var(--g-deep) 55%, var(--e-brown) 100%);
+      position: relative;
+    }
+    .hero-frame-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 32px;
+    }
+    .frame-emoji { font-size: 4.5rem; animation: leafSway 6s ease-in-out infinite; }
+    .frame-center {
+      font-family: var(--f-display);
+      font-size: 1.15rem;
+      color: oklch(90% 0.06 145);
+      text-align: center;
+      line-height: 1.55;
+    }
+    .frame-center strong {
+      color: var(--e-gold);
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+    .frame-since {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: oklch(65% 0.07 145);
+    }
+
+    /* Floating stat chips */
+    .stat-chip {
+      position: absolute;
+      background: oklch(97% 0.014 80 / 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 12px 20px;
+      box-shadow: 0 8px 32px oklch(20% 0.02 52 / 0.13);
+      border: 1px solid oklch(90% 0.022 145 / 0.55);
+    }
+    .chip-val {
+      font-family: var(--f-display);
+      font-size: 1.45rem;
+      color: var(--g-forest);
+      line-height: 1;
+    }
+    .chip-lbl {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--t-muted);
+      margin-top: 2px;
+    }
+    /* Chips sit inside the frame on mobile, float outside on desktop */
+    .chip-years { bottom: 24px; left: 16px;  animation: floatY 4s       ease-in-out infinite; }
+    .chip-loss  { top:    24px; right: 16px; animation: floatY 4s 1.6s  ease-in-out infinite; }
+    @media (min-width: 1025px) {
+      .chip-years { bottom: 48px; left: -40px; }
+      .chip-loss  { top:    48px; right: -40px; }
+    }
+
+    /* === PROOF STRIP === */
+    .proof-strip {
+      background: var(--g-deep);
+      padding: 40px 32px;
+    }
+    .proof-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 640px) { .proof-inner { grid-template-columns: repeat(2, 1fr); } }
+    .proof-item { text-align: center; }
+    .proof-num {
+      font-family: var(--f-display);
+      font-size: 2.1rem;
+      color: var(--e-gold);
+      line-height: 1;
+    }
+    .proof-lbl {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: oklch(70% 0.09 145);
+      margin-top: 4px;
+    }
+
+    /* === SECTION SCAFFOLD === */
+    .section-wrap { padding: 96px 32px; }
+    .section-inner { max-width: 1300px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--g-mid);
+      margin-bottom: 12px;
+    }
+    .section-h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+      color: var(--t-primary);
+      line-height: 1.18;
+      text-wrap: balance;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 1rem;
+      color: var(--t-body);
+      max-width: 56ch;
+      text-wrap: pretty;
+      margin-bottom: 48px;
+    }
+
+    /* === CONDITIONS GRID === */
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .cond-card {
+      background: var(--cream-2);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1.5px solid oklch(87% 0.024 78);
+      transition: border-color 200ms, transform 200ms var(--ease-out-quart), box-shadow 200ms;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .cond-card:hover {
+      border-color: oklch(52% 0.13 145 / 0.42);
+      transform: translateY(-4px) !important;
+      box-shadow: 0 10px 36px oklch(30% 0.085 145 / 0.10);
+    }
+    .cond-icon {
+      width: 48px; height: 48px;
+      background: var(--g-ghost);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .cond-name {
+      font-family: var(--f-display);
+      font-size: 1rem;
+      color: var(--t-primary);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .cond-desc { font-size: 0.8rem; color: var(--t-muted); line-height: 1.55; }
+
+    /* === RESIDENTIAL PROGRAM === */
+    .program-wrap { background: var(--g-ghost); padding: 96px 32px; }
+    .program-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .program-inner { grid-template-columns: 1fr; } }
+
+    .timeline { display: flex; flex-direction: column; }
+    .t-row {
+      display: grid;
+      grid-template-columns: 72px 24px 1fr;
+      gap: 12px;
+      align-items: start;
+      opacity: 0;
+      transform: translateX(-16px);
+    }
+    .t-time {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--g-mid);
+      padding-top: 2px;
+      letter-spacing: 0.03em;
+      text-align: right;
+    }
+    .t-track { display: flex; flex-direction: column; align-items: center; }
+    .t-dot {
+      width: 12px; height: 12px;
+      background: var(--g-forest);
+      border-radius: 50%;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .t-line {
+      width: 2px;
+      flex: 1;
+      min-height: 28px;
+      background: oklch(74% 0.10 145 / 0.3);
+      margin-top: 3px;
+    }
+    .t-body { padding-bottom: 20px; }
+    .t-name { font-weight: 700; font-size: 0.9rem; color: var(--t-primary); line-height: 1.3; }
+    .t-desc { font-size: 0.78rem; color: var(--t-muted); margin-top: 2px; }
+
+    /* === PRODUCTS === */
+    .products-wrap { background: var(--cream-2); padding: 96px 32px; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+    }
+    .prod-card {
+      background: var(--cream);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid oklch(87% 0.024 78);
+      transition: transform 200ms var(--ease-out-quart), box-shadow 200ms, border-color 200ms;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .prod-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 14px 44px oklch(30% 0.085 145 / 0.12);
+      border-color: oklch(52% 0.13 145 / 0.35);
+    }
+    .prod-thumb {
+      aspect-ratio: 1;
+      background: var(--g-ghost);
+      display: grid;
+      place-items: center;
+      font-size: 3.2rem;
+    }
+    .prod-body { padding: 20px; }
+    .prod-name { font-weight: 700; font-size: 0.95rem; color: var(--t-primary); margin-bottom: 4px; }
+    .prod-desc { font-size: 0.78rem; color: var(--t-muted); line-height: 1.5; margin-bottom: 16px; }
+    .prod-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--g-forest);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 150ms, gap 150ms;
+    }
+    .prod-link:hover { color: var(--g-deep); gap: 8px; }
+    .prod-link:focus-visible { outline: 2px solid var(--g-mid); outline-offset: 2px; border-radius: 2px; }
+
+    /* === TESTIMONIALS === */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testi-card {
+      background: var(--cream-2);
+      border-radius: 20px;
+      padding: 32px;
+      border: 1.5px solid oklch(87% 0.024 78);
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .testi-stars {
+      position: absolute;
+      top: 32px; right: 32px;
+      font-size: 0.72rem;
+      color: var(--e-gold);
+      letter-spacing: 2px;
+    }
+    .testi-qmark {
+      font-family: var(--f-display);
+      font-size: 2.8rem;
+      color: var(--g-light);
+      line-height: 0.7;
+      margin-bottom: 16px;
+    }
+    .testi-text {
+      font-size: 0.88rem;
+      line-height: 1.72;
+      color: var(--t-body);
+      margin-bottom: 20px;
+      text-wrap: pretty;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--g-pale);
+      display: grid;
+      place-items: center;
+      font-family: var(--f-display);
+      font-size: 1rem;
+      color: var(--g-forest);
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: 0.875rem; color: var(--t-primary); }
+    .testi-condition { font-size: 0.73rem; color: var(--t-muted); margin-top: 1px; }
+
+    /* === FINAL CTA === */
+    .cta-wrap {
+      background: var(--g-deep);
+      padding: 96px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-wrap::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: oklch(40% 0.115 145 / 0.18);
+      pointer-events: none;
+    }
+    .cta-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: oklch(70% 0.09 145);
+      margin-bottom: 16px;
+    }
+    .cta-h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+      color: var(--t-on-dark);
+      line-height: 1.18;
+      text-wrap: balance;
+      margin-bottom: 16px;
+    }
+    .cta-sub { font-size: 1rem; color: oklch(82% 0.04 145); margin-bottom: 40px; }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .cta-contact { font-size: 0.82rem; color: oklch(72% 0.07 145); line-height: 1.9; }
+    .cta-contact a { color: var(--e-gold); font-weight: 700; transition: opacity 150ms; }
+    .cta-contact a:hover { opacity: 0.82; text-decoration: underline; }
+    .cta-contact a:focus-visible { outline: 2px solid var(--e-gold); outline-offset: 2px; border-radius: 2px; }
+
+    /* === FOOTER === */
+    .footer {
+      background: var(--e-brown);
+      padding: 40px 32px;
+      text-align: center;
+      color: oklch(78% 0.02 52);
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+    .footer strong { color: var(--e-gold); }
+    .footer small { opacity: 0.55; font-size: 0.72rem; }
+
+    /* === KEYFRAMES === */
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-9px); }
+    }
+    @keyframes leafSway {
+      0%, 100% { transform: rotate(0deg); }
+      50%       { transform: rotate(7deg); }
+    }
+
+    /* =============================================
+       RESPONSIVE OVERHAUL
+       Mobile-first: base → 640 → 768 → 1024 → desktop
+       ============================================= */
+
+    /* --- Tablet + Mobile: single-column hero centering --- */
+    @media (max-width: 1024px) {
+      /* Center the anonymous content div inside .hero */
+      .hero > div:first-child { text-align: center; }
+
+      /* Frame: shorter so it doesn't dominate single-column layout */
+      .hero-frame { aspect-ratio: 16/10; border-radius: 20px 20px 52px 20px; }
+
+      /* Hide floating chips on tablet/mobile — proof strip covers these stats */
+      .stat-chip { display: none; }
+    }
+
+    /* --- ≤ 768px: sections center, program inner already 1-col --- */
+    @media (max-width: 768px) {
+      .section-eyebrow { text-align: center; }
+      .section-h2      { text-align: center; }
+      .section-lead    { text-align: center; margin-inline: auto; }
+
+      /* Program left column centers on single col */
+      .program-wrap .section-eyebrow,
+      .program-wrap .section-h2,
+      .program-wrap .section-lead { text-align: center; }
+      .program-wrap .btn { display: block; width: fit-content; margin: 0 auto; }
+
+      /* Testi: 1 column */
+      .testi-grid { grid-template-columns: 1fr; }
+
+      /* Proof strip: 2×2 layout — already handled by existing rule,
+         just ensure numbers don't burst out */
+      .proof-num { font-size: 1.8rem; }
+    }
+
+    /* --- ≤ 640px: mobile layout --- */
+    @media (max-width: 640px) {
+      /* Nav: tighten padding, drop logo sub, shrink button */
+      .nav            { padding: 10px 16px; }
+      .nav-logo-sub   { display: none; }
+      .nav-logo-name  { font-size: 0.95rem; }
+      .nav > .btn     { padding: 8px 14px; font-size: 0.75rem; gap: 4px; }
+
+      /* Hero: less horizontal & vertical breathing room */
+      .hero {
+        padding: calc(56px + 40px) 20px 48px;
+        gap: 24px;
+      }
+
+      /* Hero frame: landscape ratio so it's not towering */
+      .hero-frame { aspect-ratio: 4/3; }
+
+      /* Hide decorative leaf on small screens */
+      .hero-corner-leaf { display: none; }
+
+      /* Chips: scale down */
+      .stat-chip { padding: 8px 14px; border-radius: 12px; }
+      .chip-val  { font-size: 1.15rem; }
+      .chip-lbl  { font-size: 0.6rem; }
+
+      /* CTA buttons: stack full-width */
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .hero-ctas .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      /* Trust pips: smaller */
+      .trust-pip { font-size: 0.72rem; }
+
+      /* Section padding: tighter */
+      .section-wrap  { padding: 56px 20px; }
+      .program-wrap  { padding: 56px 20px; }
+      .products-wrap { padding: 56px 20px; }
+
+      /* Proof strip: tighter */
+      .proof-strip   { padding: 28px 20px; }
+      .proof-num     { font-size: 1.55rem; }
+      .proof-lbl     { font-size: 0.62rem; letter-spacing: 0.07em; }
+      .proof-inner   { gap: 16px; }
+
+      /* Conditions: 1 column */
+      .conditions-grid { grid-template-columns: 1fr; gap: 12px; }
+
+      /* Products: 2-column mini grid */
+      .products-grid        { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .prod-thumb           { aspect-ratio: 3/2; font-size: 2rem; }
+      .prod-body            { padding: 12px; }
+      .prod-name            { font-size: 0.85rem; }
+      .prod-desc            { font-size: 0.72rem; margin-bottom: 10px; }
+
+      /* Timeline: tighten column sizes */
+      .t-row  { grid-template-columns: 54px 18px 1fr; gap: 8px; }
+      .t-time { font-size: 0.62rem; }
+      .t-name { font-size: 0.85rem; }
+      .t-desc { font-size: 0.74rem; }
+
+      /* CTA section: stack buttons */
+      .cta-wrap     { padding: 56px 20px; }
+      .cta-buttons  { flex-direction: column; align-items: center; gap: 12px; }
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      /* Footer */
+      .footer { padding: 28px 20px; font-size: 0.75rem; }
+    }
+
+    /* --- ≤ 400px: very small phones (Galaxy S, older iPhones) --- */
+    @media (max-width: 400px) {
+      .hero { padding: calc(52px + 36px) 16px 40px; }
+
+      /* 1-column products on tiny screens */
+      .products-grid { grid-template-columns: 1fr; }
+      .prod-thumb    { aspect-ratio: 5/2; }
+
+      /* Proof: 2×2 already; reduce font further */
+      .proof-num { font-size: 1.35rem; }
+
+      /* Hero h1 tighter */
+      .hero-h1 { font-size: clamp(2rem, 8vw, 2.5rem); }
+    }
+
+    /* --- Desktop fix: cap frame height so it doesn't push hero taller --- */
+    @media (min-width: 1025px) {
+      .hero-frame { aspect-ratio: 3/4; max-height: min(72vh, 640px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <a href="#home" class="nav-logo" aria-label="Natureaalay home">
+      <div class="nav-logo-mark" aria-hidden="true">&#127807;</div>
+      <div>
+        <div class="nav-logo-name">Natureaalay</div>
+        <span class="nav-logo-sub">Traditional Naturopathy</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#program">Residential</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="https://wa.me/918999850938?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20Natureaalay"
+       class="btn btn-primary"
+       aria-label="Chat on WhatsApp to book a consultation">
+      &#128172; WhatsApp Us
+    </a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-labelledby="hero-h1">
+    <div>
+      <div class="hero-badge" aria-label="Exclusive for ladies and children">
+        <span class="badge-pip" aria-hidden="true">&#9792;</span>
+        Exclusively for Ladies &amp; Children
+      </div>
+
+      <h1 class="hero-h1" id="hero-h1">
+        Heal from Within, <em>Naturally.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Nagpur&#39;s trusted traditional naturopathy centre. Led by Dr. Meera, Arpita &amp; Aparna Gupta
+        with 30+ years of healing wisdom. Lose 4&#8211;6&nbsp;kg in 10&nbsp;days. Reverse hormonal
+        imbalance. Glow inside out. No medicines. No side effects.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary btn-lg">Book a Consultation</a>
+        <a href="#program"  class="btn btn-outline btn-lg">Residential Program</a>
+      </div>
+
+      <div class="hero-trust" aria-label="Contact details">
+        <span class="trust-pip">Wardhaman Nagar, Nagpur</span>
+        <span class="trust-pip">8999850938</span>
+        <span class="trust-pip">Natureaalay@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- Visual column -->
+    <div class="hero-visual" aria-hidden="true">
+      <svg class="hero-corner-leaf" viewBox="0 0 100 100" fill="none">
+        <path d="M50 5 Q90 28 78 75 Q55 98 24 78 Q5 55 50 5Z" fill="oklch(40% 0.115 145)"/>
+        <path d="M50 18 Q68 42 63 68" stroke="oklch(74% 0.10 145)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M50 18 Q34 42 38 66" stroke="oklch(74% 0.10 145)" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+
+      <div class="hero-frame">
+        <div class="hero-frame-inner">
+          <span class="frame-emoji">&#127807;</span>
+          <div class="frame-center">
+            Where Nature Heals
+            <strong>Dr. Meera, Arpita &amp; Aparna Gupta</strong>
+          </div>
+          <span class="frame-since">Healing since 1994 &nbsp;&#183;&nbsp; Nagpur</span>
+        </div>
+        <!--
+          PRODUCTION: replace hero-frame-inner with a real photo
+          <img src="clinic-photo.jpg"
+               alt="Dr. Arpita Gupta performing a herbal therapy session at Natureaalay, Nagpur"
+               width="640" height="800" loading="eager">
+        -->
+      </div>
+
+      <div class="stat-chip chip-years" role="img" aria-label="30 plus years of experience">
+        <div class="chip-val">30+</div>
+        <div class="chip-lbl">Years Experience</div>
+      </div>
+      <div class="stat-chip chip-loss" role="img" aria-label="4 to 6 kilograms lost in 10 days">
+        <div class="chip-val">4&#8211;6 kg</div>
+        <div class="chip-lbl">Loss in 10 Days</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROOF STRIP -->
+  <div class="proof-strip" role="region" aria-label="Key statistics">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <div class="proof-num" data-target="30" data-suffix="+">30+</div>
+        <div class="proof-lbl">Years of Healing</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num" data-target="2000" data-suffix="+">2,000+</div>
+        <div class="proof-lbl">Women Healed</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num" data-target="20" data-suffix="+">20+</div>
+        <div class="proof-lbl">Therapies Offered</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">100%</div>
+        <div class="proof-lbl">Natural. No Chemicals</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CONDITIONS WE TREAT -->
+  <section class="section-wrap" id="services" aria-labelledby="services-h2">
+    <div class="section-inner">
+      <p class="section-eyebrow">What We Heal</p>
+      <h2 class="section-h2" id="services-h2">Rooted Treatment for Root Causes</h2>
+      <p class="section-lead">
+        We don&#39;t mask symptoms. Every therapy targets the deep cause using time-tested naturopathy,
+        satvik diet, and personalised care for your body type.
+      </p>
+
+      <div class="conditions-grid">
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#9878;</div>
+          <h3 class="cond-name">Natural Weight Loss</h3>
+          <p class="cond-desc">Lose 4&#8211;6&nbsp;kg in 10&nbsp;days. No harsh dieting, no enemas. Gentle detox that restores your metabolism from within.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#127800;</div>
+          <h3 class="cond-name">PCOD &amp; Hormonal Balance</h3>
+          <p class="cond-desc">Reverse hormonal imbalance naturally. Clients have reversed 12-year-old PCOD and restored regular cycles.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#128134;</div>
+          <h3 class="cond-name">Headache &amp; Migraine</h3>
+          <p class="cond-desc">Deep relief through hydrotherapy, hip bath, and spinal therapies that calm the nervous system without medication.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#128135;</div>
+          <h3 class="cond-name">Hair Growth &amp; Health</h3>
+          <p class="cond-desc">Natural hair nourishment therapies and 100% chemical-free oils targeting hair fall, dandruff, and premature whitening.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#10024;</div>
+          <h3 class="cond-name">Skin Disease Care</h3>
+          <p class="cond-desc">Psoriasis, eczema, acne, and dullness treated with mud therapy, leaf wraps, and fresh plant-based formulations.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#128112;</div>
+          <h3 class="cond-name">Bridal Care</h3>
+          <p class="cond-desc">Pre-bridal detox, stain-free Haldi Ubtan, and beautification packages. Glow naturally on your most special day.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#128102;</div>
+          <h3 class="cond-name">Naturopathy for Children</h3>
+          <p class="cond-desc">Gentle, medicine-free naturopathy for children&#39;s immunity, digestion, and healthy growth. Safe and time-tested.</p>
+        </article>
+        <article class="cond-card">
+          <div class="cond-icon" aria-hidden="true">&#129321;</div>
+          <h3 class="cond-name">Gut &amp; Digestive Health</h3>
+          <p class="cond-desc">Acidity, bloating, piles, and constipation addressed through targeted gut cleansing and satvik dietary protocols.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESIDENTIAL PROGRAM -->
+  <section class="program-wrap" id="program" aria-labelledby="program-h2">
+    <div class="program-inner">
+      <div>
+        <p class="section-eyebrow">Stay &amp; Heal</p>
+        <h2 class="section-h2" id="program-h2">The Residential Healing Program</h2>
+        <p class="section-lead">
+          8 hours of therapeutic healing per day. Homemade satvik food. Hygienic, peaceful
+          accommodation in Nagpur. Everything you need to completely reset your body and mind.
+        </p>
+        <a href="#contact" class="btn btn-primary">Inquire About Availability</a>
+      </div>
+
+      <div class="timeline" role="list" aria-label="Daily schedule">
+        <div class="t-row" role="listitem">
+          <div class="t-time">8:00 AM</div>
+          <div class="t-track"><div class="t-dot"></div><div class="t-line"></div></div>
+          <div class="t-body">
+            <div class="t-name">Healthy Satvik Breakfast</div>
+            <div class="t-desc">Fresh, nourishing, prepared in-house every morning.</div>
+          </div>
+        </div>
+        <div class="t-row" role="listitem">
+          <div class="t-time">9&#8211;10 AM</div>
+          <div class="t-track"><div class="t-dot"></div><div class="t-line"></div></div>
+          <div class="t-body">
+            <div class="t-name">Hair Nourishment Therapy</div>
+            <div class="t-desc">Natural oils, herbal masks, scalp treatments.</div>
+          </div>
+        </div>
+        <div class="t-row" role="listitem">
+          <div class="t-time">10 AM&#8211;1 PM</div>
+          <div class="t-track"><div class="t-dot"></div><div class="t-line"></div></div>
+          <div class="t-body">
+            <div class="t-name">Detox, Pain Relief &amp; Beautification</div>
+            <div class="t-desc">Steam bath, mud therapy, gut cleansing, therapeutic massage.</div>
+          </div>
+        </div>
+        <div class="t-row" role="listitem">
+          <div class="t-time">1:00 PM</div>
+          <div class="t-track"><div class="t-dot"></div><div class="t-line"></div></div>
+          <div class="t-body">
+            <div class="t-name">Satvik Lunch</div>
+            <div class="t-desc">Balanced healing nutrition. Rest afterwards.</div>
+          </div>
+        </div>
+        <div class="t-row" role="listitem">
+          <div class="t-time">3&#8211;5:30 PM</div>
+          <div class="t-track"><div class="t-dot"></div><div class="t-line"></div></div>
+          <div class="t-body">
+            <div class="t-name">Relaxation &amp; Pain Relief</div>
+            <div class="t-desc">Therapeutic wraps, acupressure, Reiki healing, cold/hot compressions.</div>
+          </div>
+        </div>
+        <div class="t-row" role="listitem">
+          <div class="t-time">7:00 PM</div>
+          <div class="t-track"><div class="t-dot"></div></div>
+          <div class="t-body">
+            <div class="t-name">Light Healing Dinner</div>
+            <div class="t-desc">End of day. Rest and restore.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="products-wrap" id="products" aria-labelledby="products-h2">
+    <div class="section-inner">
+      <p class="section-eyebrow">Natural Products</p>
+      <h2 class="section-h2" id="products-h2">Handcrafted in Our Garden</h2>
+      <p class="section-lead">
+        Made from herbs grown at Natureaalay. Fresh-plucked, no preservatives, no chemicals.
+        Carry the healing home with you.
+      </p>
+
+      <div class="products-grid">
+        <article class="prod-card">
+          <div class="prod-thumb" aria-hidden="true">&#127807;</div>
+          <div class="prod-body">
+            <h3 class="prod-name">Hair Care Kit</h3>
+            <p class="prod-desc">Oil + Serum + Mask. Anti-dandruff, hair growth, hairfall control, and whitening reversal.</p>
+            <a href="https://www.natureaalay.in/How-to-buy/hair-care" class="prod-link" target="_blank" rel="noopener" aria-label="Learn more about the Hair Care Kit">Learn more &#8594;</a>
+          </div>
+        </article>
+        <article class="prod-card">
+          <div class="prod-thumb" aria-hidden="true">&#10024;</div>
+          <div class="prod-body">
+            <h3 class="prod-name">Shine &amp; Glow</h3>
+            <p class="prod-desc">Hydration, skin tightening, and natural glow. Signature skin care formulation.</p>
+            <a href="https://www.natureaalay.in/How-to-buy/skin-care" class="prod-link" target="_blank" rel="noopener" aria-label="Learn more about Shine and Glow">Learn more &#8594;</a>
+          </div>
+        </article>
+        <article class="prod-card">
+          <div class="prod-thumb" aria-hidden="true">&#127807;</div>
+          <div class="prod-body">
+            <h3 class="prod-name">Mitti Patti</h3>
+            <p class="prod-desc">Traditional mud therapy pack for detoxification and lifestyle disorder management.</p>
+            <a href="https://www.natureaalay.in/How-to-buy" class="prod-link" target="_blank" rel="noopener" aria-label="Learn more about Mitti Patti">Learn more &#8594;</a>
+          </div>
+        </article>
+        <article class="prod-card">
+          <div class="prod-thumb" aria-hidden="true">&#127861;</div>
+          <div class="prod-body">
+            <h3 class="prod-name">Detox Tea</h3>
+            <p class="prod-desc">Garden-plucked Lemongrass, Tulsi, Mint, Rose, Ginger &amp; Turmeric. Zero preservatives.</p>
+            <a href="https://www.natureaalay.in/How-to-buy/digestive-health" class="prod-link" target="_blank" rel="noopener" aria-label="Learn more about Detox Tea">Learn more &#8594;</a>
+          </div>
+        </article>
+        <article class="prod-card">
+          <div class="prod-thumb" aria-hidden="true">&#128153;</div>
+          <div class="prod-body">
+            <h3 class="prod-name">Haldi Ubtan</h3>
+            <p class="prod-desc">Stain-free bridal Haldi Ubtan. Traditional formula for glowing on your wedding day.</p>
+            <a href="https://www.natureaalay.in/How-to-buy/haldi-ubtan-stain-free-for-wedding" class="prod-link" target="_blank" rel="noopener" aria-label="Learn more about Haldi Ubtan">Learn more &#8594;</a>
+          </div>
+        </article>
+        <article class="prod-card">
+          <div class="prod-thumb" aria-hidden="true">&#127807;</div>
+          <div class="prod-body">
+            <h3 class="prod-name">Yummy Tummy</h3>
+            <p class="prod-desc">Natural digestive supplement for daily gut health and ongoing wellness support.</p>
+            <a href="https://www.natureaalay.in/How-to-buy/digestive-health" class="prod-link" target="_blank" rel="noopener" aria-label="Learn more about Yummy Tummy">Learn more &#8594;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="section-wrap" id="testimonials" aria-labelledby="testi-h2">
+    <div class="section-inner">
+      <p class="section-eyebrow">Real Stories</p>
+      <h2 class="section-h2" id="testi-h2">Healing That Speaks for Itself</h2>
+
+      <div class="testi-grid">
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-qmark" aria-hidden="true">&#8220;</div>
+          <p class="testi-text">
+            I visited for a 1-week treatment focused on PCOD. The experience was truly transformative.
+            I lost 2.5&nbsp;kg, my sleep reset completely, and the food was nutritious and delicious.
+            The environment was peaceful and healing in every sense.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">K</div>
+            <div>
+              <div class="testi-name">Kashish</div>
+              <div class="testi-condition">PCOD &#8212; Residential Program</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-qmark" aria-hidden="true">&#8220;</div>
+          <p class="testi-text">
+            PCOD, the 12-year foe of my life, got reversed with natural elements. I got back regular
+            periods, lost 6&nbsp;kg (never regained!), hair psoriasis cured, and my body and mind
+            completely rejuvenated. I recommend Natureaalay to everyone seeking wellness.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">A</div>
+            <div>
+              <div class="testi-name">Miss Aboli Ramtake</div>
+              <div class="testi-condition">PCOD &amp; Hair Psoriasis &#8212; 2 months</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-qmark" aria-hidden="true">&#8220;</div>
+          <p class="testi-text">
+            Dr. Arpita and Aparna spent over an hour with me, looking at my diet, stress, and
+            lifestyle &#8212; things no other doctor had considered. Within 2 months my gastric issues
+            improved significantly. Energy up, sleep better. Truly compassionate doctors.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">R</div>
+            <div>
+              <div class="testi-name">Mrs. Radhika Kabra</div>
+              <div class="testi-condition">Gastric Issues &#8212; 6 months</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="cta-wrap" id="contact" aria-labelledby="cta-h2">
+    <div class="cta-inner">
+      <p class="cta-eyebrow">Begin Your Healing Journey</p>
+      <h2 class="cta-h2" id="cta-h2">Ready to Heal Naturally?</h2>
+      <p class="cta-sub">
+        Book a consultation with Dr. Meera, Arpita, or Aparna Gupta today.
+        Exclusively for ladies and children. Wardhaman Nagar, Nagpur.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="https://wa.me/918999850938?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20Natureaalay"
+           class="btn btn-whatsapp btn-lg"
+           target="_blank" rel="noopener"
+           aria-label="Chat on WhatsApp to book your consultation">
+          &#128172; WhatsApp: 8999850938
+        </a>
+        <a href="mailto:Natureaalay@gmail.com"
+           class="btn btn-ghost-dark btn-lg"
+           aria-label="Send an email to Natureaalay">
+          Email Us
+        </a>
+      </div>
+
+      <p class="cta-contact">
+        Also call:
+        <a href="tel:+918421330938">8421330938</a> &nbsp;&#8226;&nbsp;
+        <a href="tel:+919595828168">9595828168</a><br>
+        <a href="mailto:Natureaalay@gmail.com">Natureaalay@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <p>
+      <strong>Natureaalay</strong> &#8212; Traditional Naturopathy &#8212; Wardhaman Nagar Colony, Nagpur<br>
+      Exclusively for Ladies &amp; Children &nbsp;&#183;&nbsp; 30+ Years of Experience<br>
+      <small>&copy; 2026 Natureaalay. All rights reserved.</small>
+    </p>
+  </footer>
+
+
+  <script>
+    /* Nav scroll shadow */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    /* Staggered entrance animations via IntersectionObserver */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'none';
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    [
+      ['.cond-card',  55],
+      ['.testi-card', 80],
+      ['.prod-card',  55],
+      ['.t-row',      70],
+    ].forEach(([sel, step]) => {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        const dur = 480;
+        const delay = i * step;
+        el.style.transition =
+          `opacity ${dur}ms ${delay}ms cubic-bezier(0.25,1,0.5,1),` +
+          `transform ${dur}ms ${delay}ms cubic-bezier(0.25,1,0.5,1)`;
+        io.observe(el);
+      });
+    });
+
+    /* Animated counters */
+    const easeOut = t => 1 - Math.pow(1 - t, 4);
+
+    const animateNum = (el, target, suffix) => {
+      const t0 = performance.now();
+      const dur = 1600;
+      const tick = now => {
+        const p = Math.min((now - t0) / dur, 1);
+        el.textContent = Math.floor(easeOut(p) * target).toLocaleString('en-IN') + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const proofIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('[data-target]').forEach(el => {
+          animateNum(el, parseInt(el.dataset.target, 10), el.dataset.suffix || '');
+        });
+        proofIo.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    const strip = document.querySelector('.proof-strip');
+    if (strip) proofIo.observe(strip);
+  </script>
+</body>
+</html>

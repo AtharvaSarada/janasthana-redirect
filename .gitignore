@@ -1,0 +1,5 @@
+# screenshot test artifacts
+*.png
+
+# playwright mcp cache
+.playwright-mcp/
